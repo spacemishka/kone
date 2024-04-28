@@ -6,7 +6,8 @@
 
 /*  #include <dt-bindings/zmk/matrix_transform.h>  */
 
-&pro_micro_spi {
+//&pro_micro_spi {
+&spi0
 	status = "okay";
 	cs-gpios = <&pro_micro 10 GPIO_ACTIVE_LOW>;
 	shifter: 595@0 {
