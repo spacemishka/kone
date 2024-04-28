@@ -6,10 +6,8 @@
 
 /*  #include <dt-bindings/zmk/matrix_transform.h>  */
 
-pro_micro_spi: &spi0{
+&pro_micro_spi {
 	status = "okay";
-/*	pinctrl-0 = <&spi0_default>;
- 	pinctrl-1 = <&spi0_sleep>;*/
 	cs-gpios = <&pro_micro 10 GPIO_ACTIVE_LOW>;
 	shifter: 595@0 {
 		compatible = "zmk,gpio-595";
@@ -41,7 +39,7 @@ pro_micro_spi: &spi0{
 			= <&pro_micro 21  (GPIO_ACTIVE_LOW)>
 			, <&pro_micro 20  (GPIO_ACTIVE_LOW)>
 			, <&pro_micro 19  (GPIO_ACTIVE_LOW)>
-			, <&pro_micro 15  (GPIO_ACTIVE_LOW)>
+			, <&pro_micro 18  (GPIO_ACTIVE_LOW)>
 			, <&pro_micro 5   (GPIO_ACTIVE_LOW)>
 			, <&pro_micro 6   (GPIO_ACTIVE_LOW)>
 			;
