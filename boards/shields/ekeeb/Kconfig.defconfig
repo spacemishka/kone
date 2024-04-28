@@ -28,7 +28,7 @@ endif # ZMK_DISPLAY
 #	default 64
 
 #config LVGL_DPI
-	default 148
+#	default 148
 
 #config LVGL_BITS_PER_PIXEL
 #	default 1
