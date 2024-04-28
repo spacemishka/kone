@@ -3,11 +3,53 @@
  *
  * SPDX-License-Identifier: MIT
  */
-
+/*
 &spi0 {
 	compatible = "nordic,nrf-spim";
 	//mosi-pin = <(32*0+10)>;
 	sck-pin = <(32*1+13)>;
 	// Unused pin, needed for SPI definition, but not used by the shift register driver itself.
 	miso-pin = <(32*1+11)>;
+};
+*/
+
+
+&pinctrl {
+       i2c1_default: i2c1_default {
+               group1 {
+                       psels = <NRF_PSEL(TWIM_SDA, 0, 17)>,
+                               <NRF_PSEL(TWIM_SCL, 0, 20)>;
+               };
+       };
+
+       i2c1_sleep: i2c1_sleep {
+               group1 {
+                       psels = <NRF_PSEL(TWIM_SDA, 0, 17)>,
+                               <NRF_PSEL(TWIM_SCL, 0, 20)>;
+                       low-power-enable;
+               };
+       };
+    spi0_default: spi0_default {
+        group1 {
+            psels = <NRF_PSEL(SPIM_SCK, 1, 13)>,
+                <NRF_PSEL(SPIM_MOSI, 0,10)>,
+                <NRF_PSEL(SPIM_MISO, 1, 11)>;
+        };
+    };
+
+    spi0_sleep: spi0_sleep {
+        group1 {
+            psels = <NRF_PSEL(SPIM_SCK, 0, 8)>,
+                <NRF_PSEL(SPIM_MOSI, 0, 10)>,
+                <NRF_PSEL(SPIM_MISO, 0, 17)>;
+            low-power-enable;
+        };
+    };
+};
+
+&spi0 {
+    compatible = "nordic,nrf-spim";
+    pinctrl-0 = <&spi0_default>;
+    pinctrl-1 = <&spi0_sleep>;
+    pinctrl-names = "default", "sleep";
 };
