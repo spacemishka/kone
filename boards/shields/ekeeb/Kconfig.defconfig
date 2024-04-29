@@ -3,6 +3,9 @@
 
 if SHIELD_EKEEB
 
+config ZMK_USB
+	default n
+
 config ZMK_KEYBOARD_NAME
 	default "ekeeb"
 
