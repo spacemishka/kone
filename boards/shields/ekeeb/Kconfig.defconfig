@@ -36,7 +36,6 @@ config LV_Z_BITS_PER_PIXEL
 choice LV_COLOR_DEPTH
     bool
     default LV_COLOR_DEPTH_1
-    #depends on LVGL && DISPLAY && (SHIELD_SSD1306_128X64 || SHIELD_SSD1306_128X64_SPI|| SHIELD_SSD1306_128X32
 endchoice
 endif # LVGL
 
