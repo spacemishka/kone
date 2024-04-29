@@ -32,7 +32,6 @@
 
 	kscan0: kscan_0 {
 		compatible = "zmk,kscan-gpio-matrix";
-
 		diode-direction = "col2row";
 		row-gpios
 			= <&pro_micro 21  (GPIO_ACTIVE_LOW)>
@@ -71,8 +70,8 @@
 		compatible = "alps,ec11";
 		a-gpios = <&pro_micro 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
 		b-gpios = <&pro_micro 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-		resolution = <2>;
-		status = "disabled";
+		steps = <20>;
+		status = "okay";
 	};
 	
 };
@@ -80,11 +79,9 @@
 &i2c1 {
 	status = "okay";
     compatible = "nordic,nrf-twim";
-	//sda-pin = <17>;
-	//scl-pin = <20>;
-        pinctrl-0 = <&i2c1_default>;
-        pinctrl-1 = <&i2c1_sleep>;
-        pinctrl-names = "default", "sleep";
+    pinctrl-0 = <&i2c1_default>;
+    pinctrl-1 = <&i2c1_sleep>;
+	pinctrl-names = "default", "sleep";
 	zephyr,concat-buf-size = <1024>;
 	oled: ssd1306@3c {
 		compatible = "solomon,ssd1306fb";
