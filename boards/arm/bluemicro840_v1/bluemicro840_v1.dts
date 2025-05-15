@@ -88,15 +88,16 @@
 };
 
 &i2c0 {
-    compatible = "nordic,nrf-twim";
+    compatible = "nordic,nrf-twi";
     status = "okay";
     pinctrl-0 = <&i2c0_default>;
     pinctrl-1 = <&i2c0_sleep>;
     pinctrl-names = "default", "sleep";
+    clock-frequency = <400000>;
 };
 
 &spi0 {
-    compatible = "nordic,nrf-spim";
+    compatible = "nordic,nrf-spi";
     status = "okay";
     pinctrl-0 = <&spi0_default>;
     pinctrl-1 = <&spi0_sleep>;
