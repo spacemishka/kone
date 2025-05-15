@@ -21,23 +21,23 @@
 
 / {
     behaviors {
-        // Define behaviors for German umlauts
+        // Define behaviors for German umlauts using correct codes
         umlaut_a: umlaut_a {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp RA(N7)>, <&kp LS(RA(N7))>;
+            bindings = <&kp LBKT>, <&kp LS(LBKT)>;  // ä = [ , Ä = {
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
         umlaut_o: umlaut_o {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp RA(N5)>, <&kp LS(RA(N5))>;
+            bindings = <&kp SEMI>, <&kp LS(SEMI)>;  // ö = ; , Ö = :
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
         umlaut_u: umlaut_u {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp RA(N6)>, <&kp LS(RA(N6))>;
+            bindings = <&kp SQT>, <&kp LS(SQT)>;    // ü = ' , Ü = "
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
     };
@@ -119,10 +119,10 @@
             bindings = <
                 &kp ESC     &trans    &kp F1  &kp F2    &kp F3  &kp F4  &kp F5     &kp F6  &kp F7  &kp F8     &kp F9    &kp F10    &kp F11     &kp F12       &kp PSCRN  &kp SLCK  &kp PAUSE_BREAK    &trans      &trans        &trans           &trans     
                 &kp CARET   &kp N1    &kp N2  &kp N3    &kp N4  &kp N5  &kp N6     &kp N7  &kp N8  &kp N9     &kp N0    &kp MINUS  &kp EQUAL   &kp BSPC      &kp INS    &kp HOME  &kp PG_UP          &kp KP_NUM  &kp KP_SLASH  &kp KP_ASTERISK  &kp KP_MINUS 
-                &kp TAB     &kp Q     &kp W   &kp E     &kp R   &kp T   &kp Z      &umlaut_u &kp I  &umlaut_o  &kp P     &kp RA(N8) &kp RA(N9)  &kp BSLH      &kp DEL    &kp END   &kp PG_DN          &kp KP_N7   &kp KP_N8     &kp KP_N9        &kp KP_PLUS 
-                &kp CAPS    &trans    &umlaut_a &kp S   &kp D   &kp F   &kp G      &kp H   &kp J   &kp K      &kp L     &kp SEMI   &kp RA(N0)  &kp ENTER     &trans     &trans    &trans             &kp KP_N4   &kp KP_N5     &kp KP_N6        &kp S     
+                &kp TAB     &kp Q     &kp W   &kp E     &kp R   &kp T   &kp Z      &umlaut_u &kp I  &umlaut_o  &kp P     &kp MINUS  &kp EQUAL   &kp BSLH      &kp DEL    &kp END   &kp PG_DN          &kp KP_N7   &kp KP_N8     &kp KP_N9        &kp KP_PLUS 
+                &kp CAPS    &trans    &umlaut_a &kp S   &kp D   &kp F   &kp G      &kp H   &kp J   &kp K      &kp L     &kp SEMI   &kp BSLH    &kp ENTER     &trans     &trans    &trans             &kp KP_N4   &kp KP_N5     &kp KP_N6        &kp S     
                 &kp LSHIFT  &trans    &kp Y   &kp X     &kp C   &kp V   &kp B      &kp N   &kp M   &kp COMMA  &kp DOT   &kp MINUS  &kp RSHIFT  &kp RSHIFT    &trans     &kp UP    &trans             &kp KP_N1   &kp KP_N2     &kp KP_N3        &kp KP_ENTER 
-                &kp LCTRL   &kp LGUI  &trans  &kp LALT  &to DCS &to DEFAULT &kp SPACE &trans &trans &kp RA(Q)  &kp RGUI  &trans     &kp K_APP   &kp RCTRL     &kp LEFT   &kp DOWN  &kp RIGHT          &kp Q       &kp KP_N0     &kp KP_DOT       &kp R    
+                &kp LCTRL   &kp LGUI  &trans  &kp LALT  &to DCS &to DEFAULT &kp SPACE &trans &trans &kp RALT   &kp RGUI  &trans     &kp K_APP   &kp RCTRL     &kp LEFT   &kp DOWN  &kp RIGHT          &kp Q       &kp KP_N0     &kp KP_DOT       &kp R    
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
         };

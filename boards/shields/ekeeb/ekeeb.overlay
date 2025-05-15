@@ -27,20 +27,20 @@
 		zmk,kscan = &kscan0;
 	};
 
-    // GPIO outputs for indicators
-    gpio_outputs: gpio-outputs {
-        compatible = "gpio-keys";
-        caps_indicator: caps_indicator {
-            gpios = <&shifter 21 GPIO_ACTIVE_HIGH>;
-            label = "CAPS Lock Indicator";
+    // Keyboard output configuration
+    kbout: kbd-outputs {
+        compatible = "zmk,keyboard-outputs";
+        caps-led {
+            output = <&shifter 21 GPIO_ACTIVE_HIGH>;
+            type = "caps-lock";
         };
-        num_indicator: num_indicator {
-            gpios = <&shifter 22 GPIO_ACTIVE_HIGH>;
-            label = "NUM Lock Indicator";
+        num-led {
+            output = <&shifter 22 GPIO_ACTIVE_HIGH>;
+            type = "num-lock";
         };
-        scroll_indicator: scroll_indicator {
-            gpios = <&shifter 23 GPIO_ACTIVE_HIGH>;
-            label = "Scroll Lock Indicator";
+        scroll-led {
+            output = <&shifter 23 GPIO_ACTIVE_HIGH>;
+            type = "scroll-lock";
         };
     };
 
