@@ -16,13 +16,13 @@
         zephyr,sram = &sram0;
         zephyr,flash = &flash0;
         zephyr,console = &cdc_acm_uart;
+        zephyr,bt-uart = &uart0;
     };
 
     leds {
         compatible = "gpio-leds";
         blue_led: led_0 {
             gpios = <&gpio0 15 GPIO_ACTIVE_HIGH>;
-            label = "Blue LED";
         };
     };
 };
@@ -43,19 +43,23 @@
     status = "okay";
 };
 
+&uart0 {
+    compatible = "nordic,nrf-uart";
+    current-speed = <115200>;
+    status = "okay";
+    pinctrl-0 = <&uart0_default>;
+    pinctrl-1 = <&uart0_sleep>;
+    pinctrl-names = "default", "sleep";
+};
+
 &usbd {
     status = "okay";
     cdc_acm_uart: cdc_acm_uart {
         compatible = "zephyr,cdc-acm-uart";
-        label = "CDC_ACM_0";
     };
 };
 
 &flash0 {
-    /*
-     * For more information, see:
-     * http://docs.zephyrproject.org/latest/devices/dts/flash_partitions.html
-     */
     partitions {
         compatible = "fixed-partitions";
         #address-cells = <1>;
@@ -70,15 +74,6 @@
             reg = <0x00026000 0x000c6000>;
         };
 
-        /*
-         * The flash starting at 0x000ec000 and ending at
-         * 0x000f4000 is reserved for use by the application.
-         */
-
-        /*
-         * Storage partition will be used by FCB/LittleFS/NVS
-         * if enabled.
-         */
         storage_partition: partition@ec000 {
             label = "storage";
             reg = <0x000ec000 0x00008000>;
