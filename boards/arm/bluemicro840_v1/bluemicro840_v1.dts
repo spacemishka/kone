@@ -90,18 +90,10 @@
 &i2c0 {
     compatible = "nordic,nrf-twim";
     status = "okay";
+    clock-frequency = <400000>;
     pinctrl-0 = <&i2c0_default>;
     pinctrl-1 = <&i2c0_sleep>;
     pinctrl-names = "default", "sleep";
-    clock-frequency = <400000>;
-
-    oled: ssd1306@3c {
-        compatible = "solomon,ssd1306fb";
-        reg = <0x3c>;
-        label = "DISPLAY";
-        width = <128>;
-        height = <32>;
-    };
 };
 
 &spi0 {

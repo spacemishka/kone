@@ -21,6 +21,7 @@
 / {
     chosen {
         zmk,kscan = &kscan0;
+        zephyr,display = &oled;
     };
 
     indicators {
@@ -78,5 +79,24 @@
         b-gpios = <&pro_micro 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         steps = <20>;
         status = "okay";
+    };
+};
+
+&i2c0 {
+
+    oled: ssd1306@3c {
+        compatible = "solomon,ssd1306fb";
+        status = "okay";
+        reg = <0x3c>;
+        width = <128>;
+        height = <32>;
+        segment-offset = <0>;
+        page-offset = <0>;
+        display-offset = <0>;
+        multiplex-ratio = <31>;
+        prechargep = <0x22>;
+        segment-remap;
+        com-invdir;
+        com-sequential;
     };
 };
