@@ -104,7 +104,6 @@
     keymap0: keymap {
         compatible = "zmk,keymap";
         default_layer {
-            label = "default layer";
             bindings = <
                 &kp ESC     &trans    &kp F1  &kp F2    &kp F3  &kp F4  &kp F5     &kp F6  &kp F7  &kp F8     &kp F9    &kp F10    &kp F11     &kp F12       &kp PSCRN  &kp SLCK  &kp PAUSE_BREAK    &trans      &trans        &trans           &trans     
                 &kp GRAVE   &kp N1    &kp N2  &kp N3    &kp N4  &kp N5  &kp N6     &kp N7  &kp N8  &kp N9     &kp N0    &kp MINUS  &kp EQUAL   &kp BSPC      &kp INS    &kp HOME  &kp PG_UP          &kp KP_NUM  &kp KP_SLASH  &kp KP_ASTERISK  &kp KP_MINUS 
@@ -117,7 +116,6 @@
         };
         
         german_layer {
-            label = "German layer";
             bindings = <
                 &kp ESC     &trans    &kp F1  &kp F2    &kp F3  &kp F4  &kp F5     &kp F6  &kp F7  &kp F8     &kp F9    &kp F10    &kp F11     &kp F12       &kp PSCRN  &kp SLCK  &kp PAUSE_BREAK    &trans      &trans        &trans           &trans     
                 &kp CARET   &kp N1    &kp N2  &kp N3    &kp N4  &kp N5  &kp N6     &kp N7  &kp N8  &kp N9     &kp N0    &kp MINUS  &kp EQUAL   &kp BSPC      &kp INS    &kp HOME  &kp PG_UP          &kp KP_NUM  &kp KP_SLASH  &kp KP_ASTERISK  &kp KP_MINUS 
@@ -130,7 +128,6 @@
         };
         
         dcs_layer {
-            label = "DCS layer";
             bindings = <
                 &kp ESC     &trans    &kp F1  &kp F2    &kp F3  &kp F4  &kp F5     &kp F6  &kp F7  &kp F8     &kp F9    &kp F10    &kp F11     &kp F12       &kp PSCRN  &kp SLCK  &kp PAUSE_BREAK    &trans      &trans        &trans           &trans     
                 &kp GRAVE   &kp N1    &kp N2  &kp N3    &kp N4  &kp N5  &kp N6     &kp N7  &kp N8  &kp N9     &kp N0    &kp MINUS  &kp EQUAL   &kp BSPC      &kp INS    &kp HOME  &kp PG_UP          &kp KP_NUM  &kp KP_SLASH  &kp KP_ASTERISK  &kp KP_MINUS 
