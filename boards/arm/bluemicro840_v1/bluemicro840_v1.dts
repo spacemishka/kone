@@ -89,7 +89,7 @@
 
 &i2c0 {
     compatible = "nordic,nrf-twim";
-    status = "okay";
+    status = "disabled";
     clock-frequency = <400000>;
     pinctrl-0 = <&i2c0_default>;
     pinctrl-1 = <&i2c0_sleep>;
