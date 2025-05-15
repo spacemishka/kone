@@ -3,7 +3,4 @@
  * SPDX-License-Identifier: MIT
  */
 
-/* Use existing i2c0 instance */
-&oled {
-    bus = <&i2c0>;
-};
+/* Empty file - all configurations are in the board's DTS */
