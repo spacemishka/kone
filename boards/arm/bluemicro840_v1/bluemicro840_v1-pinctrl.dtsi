@@ -28,8 +28,8 @@
 
     i2c0_sleep: i2c0_sleep {
         group1 {
-            psels = <&gpio0 17 0>,  /* SDA on P0.17 */
-                   <&gpio0 20 0>;   /* SCL on P0.20 */
+            psels = <NRF_PSEL(TWIM_SDA, 0, 17)>,
+                    <NRF_PSEL(TWIM_SCL, 0, 20)>;
             low-power-enable;
         };
     };
