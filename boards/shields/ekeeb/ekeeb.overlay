@@ -86,8 +86,6 @@
     status = "okay";
 
     oled: ssd1306@3c {
-        compatible = "solomon,ssd1306";
-        label = "ssd1306";
         compatible = "solomon,ssd1306fb";
         status = "okay";
         reg = <0x3c>;
