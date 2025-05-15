@@ -1,4 +1,8 @@
 
+# Zephyr version must match west.yml reference
+zephyr:
+  version: v3.5.0
+
 include:
   - board: nice_nano_v2
     shield: ekeeb
