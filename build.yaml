@@ -2,5 +2,9 @@
 include:
   - board: nice_nano_v2
     shield: ekeeb
+  - board: nice_nano_v2_clear_bt
+    shield: settings_reset
   - board: bluemicro840_v1
     shield: ekeeb
+  - board: bluemicro840_v1_clear_bt
+    shield: settings_reset

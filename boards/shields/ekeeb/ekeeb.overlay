@@ -21,14 +21,24 @@
 	};
 };
 
-
-
 / {
 	chosen {
 		zephyr,display = &oled;
 		zmk,kscan = &kscan0;
 	};
 
+	indicators {
+		compatible = "gpio-leds";
+		caps_indicator: caps_indicator {
+			gpios = <&shifter 21 GPIO_ACTIVE_HIGH>;
+		};
+		num_indicator: num_indicator {
+			gpios = <&shifter 22 GPIO_ACTIVE_HIGH>;
+		};
+		scroll_indicator: scroll_indicator {
+			gpios = <&shifter 23 GPIO_ACTIVE_HIGH>;
+		};
+	};
 
 	kscan0: kscan_0 {
 		compatible = "zmk,kscan-gpio-matrix";
@@ -78,23 +88,26 @@
 
 &i2c1 {
 	status = "okay";
-    compatible = "nordic,nrf-twim";
-    pinctrl-0 = <&i2c1_default>;
-    pinctrl-1 = <&i2c1_sleep>;
+    
+	compatible = "nordic,nrf-twim";
+	pinctrl-0 = <&i2c1_default>;
+	pinctrl-1 = <&i2c1_sleep>;
 	pinctrl-names = "default", "sleep";
-	zephyr,concat-buf-size = <1024>;
-	oled: ssd1306@3c {
-		compatible = "solomon,ssd1306fb";
-		reg = <0x3c>;
-		width = <128>;
-		height = <32>;
-		segment-offset = <0>;
-		page-offset = <0>;
-		display-offset = <0>;
-		multiplex-ratio = <31>;
-		segment-remap;
-		com-invdir;
-		com-sequential;
-		prechargep = <0x22>;
-	};
+//	zephyr,concat-buf-size = <1024>;
+
+    oled: ssd1306@3c {
+        compatible = "solomon,ssd1306fb";
+        reg = <0x3c>;
+        width = <128>;
+        height = <32>;
+        segment-offset = <0>;
+        page-offset = <0>;
+        display-offset = <0>;
+        multiplex-ratio = <31>;
+        segment-remap;
+        com-invdir;
+        com-sequential;
+        inversion-on;
+        prechargep = <0x22>;
+    };
 };
