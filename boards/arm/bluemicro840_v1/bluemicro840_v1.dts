@@ -60,6 +60,22 @@
     pinctrl-names = "default", "sleep";
 };
 
+&i2c1 {
+    compatible = "nordic,nrf-twim";
+    status = "okay";
+    pinctrl-0 = <&i2c1_default>;
+    pinctrl-1 = <&i2c1_sleep>;
+    pinctrl-names = "default", "sleep";
+};
+
+&spi0 {
+    compatible = "nordic,nrf-spim";
+    status = "okay";
+    pinctrl-0 = <&spi0_default>;
+    pinctrl-1 = <&spi0_sleep>;
+    pinctrl-names = "default", "sleep";
+};
+
 &usbd {
     status = "okay";
     cdc_acm_uart: cdc_acm_uart {
