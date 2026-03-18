@@ -1,12 +1,12 @@
 
 include:
-  - board: nice_nano
+  - board: nice_nano//zmk
     shield: ekeeb
-#  - board: nice_nano_v2_clear_bt
+#  - board: nice_nano//zmk
 #    shield: settings_reset
 #  - board: bluemicro840_v1
 #    shield: ekeeb
-#  - board: bluemicro840_v1_clear_bt
+#  - board: bluemicro840_v1
 #    shield: settings_reset
 
 
