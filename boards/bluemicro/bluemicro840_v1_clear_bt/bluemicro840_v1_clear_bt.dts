@@ -5,11 +5,11 @@
 
 /dts-v1/;
 #include <nordic/nrf52840_qiaa.dtsi>
-#include "nice_nano_v2_clear_bt-pinctrl.dtsi"
+#include "bluemicro840_v1_clear_bt-pinctrl.dtsi"
 
 / {
-    model = "nice!nano v2 Clear BT";
-    compatible = "nice,nano_v2_clear_bt";
+    model = "BlueMicro840 v1 Clear BT";
+    compatible = "bluemicro,840_v1_clear_bt";
 
     chosen {
         zephyr,code-partition = &code_partition;

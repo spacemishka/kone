@@ -1,0 +1,5 @@
+board:
+  name: bluemicro840_v1
+  vendor: bluemicro
+  socs:
+    - name: nrf52840

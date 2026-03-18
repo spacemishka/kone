@@ -1,0 +1,15 @@
+# Copyright (c) 2024 The ZMK Contributors
+# SPDX-License-Identifier: MIT
+
+if BOARD_BLUEMICRO840_V1_CLEAR_BT
+
+config BT_CTLR
+    default BT
+
+config ZMK_BLE
+    default y
+
+config ZMK_USB
+    default y
+
+endif # BOARD_BLUEMICRO840_V1_CLEAR_BT
