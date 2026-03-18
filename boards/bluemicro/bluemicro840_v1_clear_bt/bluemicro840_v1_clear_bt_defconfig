@@ -1,0 +1,33 @@
+# SPDX-License-Identifier: MIT
+
+# Enable MPU
+CONFIG_ARM_MPU=y
+
+# Enable hardware stack protection
+CONFIG_HW_STACK_PROTECTION=y
+
+# Enable RTT
+CONFIG_USE_SEGGER_RTT=y
+
+# Enable GPIO
+CONFIG_GPIO=y
+
+# Enable UART
+CONFIG_SERIAL=y
+
+# Enable console
+CONFIG_CONSOLE=y
+CONFIG_UART_CONSOLE=y
+
+# Additional board options
+CONFIG_GPIO_AS_PINRESET=y
+
+# Enable USB
+CONFIG_USB_DEVICE_STACK=y
+CONFIG_USB_DEVICE_MANUFACTURER="BlueMicro"
+CONFIG_USB_DEVICE_PRODUCT="BlueMicro840 v1 Clear BT"
+CONFIG_USB_DEVICE_VID=0x1D50
+CONFIG_USB_DEVICE_PID=0x6161
+
+# Build UF2 by default
+CONFIG_BUILD_OUTPUT_UF2=y
